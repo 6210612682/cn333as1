@@ -1,0 +1,36 @@
+package com.example.numberguessinggame;
+
+import android.os.Bundle;
+import android.util.DisplayMetrics;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+
+public class PopScores extends AppCompatActivity {
+
+    TextView tv_score;
+
+    @Override
+    protected  void onCreate(Bundle savedInstanceState) {
+        Bundle b = getIntent().getExtras();
+        int value = -1;
+        if(b != null) {
+            value = b.getInt("key");
+        }
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.popwindow2);
+        tv_score = (TextView) findViewById(R.id.tv_score);
+        tv_score.setText("ท้าทายไปทั้งหมด " + value + " ครั้ง");
+
+
+        DisplayMetrics dm = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(dm);
+
+        int width = dm.widthPixels;
+        int height = dm.heightPixels;
+
+        getWindow().setLayout((int)(width*.8),(int)(height*.4));
+    }
+
+}
