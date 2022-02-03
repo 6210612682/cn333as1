@@ -1,4 +1,4 @@
-# Assignment 1
+# Assignment 1 (Number Guessing Game)
 ## นาย ปัณณวิชญ์ สังวร
 ## รหัสนักศึกษา 6210612682
 
